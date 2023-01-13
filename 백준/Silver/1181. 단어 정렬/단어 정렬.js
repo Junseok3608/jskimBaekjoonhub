@@ -14,6 +14,5 @@ for (let i = 1; i <= sort[sort.length - 1].length; i++) {
   let tm = sort.filter((el) => el.length === i);
   result.push(...tm.sort());
 }
-for (let j of result) {
-  console.log(j);
-}
+console.log(result.join("\n"));
+
