@@ -2,11 +2,11 @@ const fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 input.shift();
 
-const setArr = input[0]
+const arr = input[0]
   .split(" ")
   .map(Number)
   .sort((a, b) => a - b);
-const set = new Set(setArr);
+const set = new Set(arr);
 const map = new Map();
 
 [...set].forEach((item, index) => {
