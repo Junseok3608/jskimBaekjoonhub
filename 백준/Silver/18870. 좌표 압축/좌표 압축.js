@@ -1,7 +1,6 @@
 const fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-
-const N = +input.shift();
+input.shift();
 
 const setArr = input[0]
   .split(" ")
