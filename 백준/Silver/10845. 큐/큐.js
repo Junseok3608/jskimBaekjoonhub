@@ -3,31 +3,30 @@ const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.text";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 const queue = [];
-const answer = [];
-const len = Number(input[0]);
+const result = [];
+const n = Number(input[0]);
 
-for(let i=1; i<=len; i++){
-    let cmd = input[i].split(' ');
-    switch(cmd[0]) {
-        case 'push':
-            queue.push(cmd[1]);
-            break;
-        case 'pop':
-            answer.push(queue.shift() || -1);
-            break;
-        case 'size':
-            answer.push(queue.length);
-            break;
-        case 'empty':
-            answer.push(queue[0] ? 0 : 1);
-            break;
-        case 'front':
-            answer.push(queue[0] || -1);
-            break;
-        case 'back':
-            answer.push(queue[queue.length-1] || -1);
-            break;
-    }
+for (i = 1; i <= n; i++) {
+  let order = input[i].split(" ");
+  switch (order[0]) {
+    case "push":
+      queue.push(order[1]);
+      break;
+    case "pop":
+      result.push(queue.shift() || -1);
+      break;
+    case "size":
+      result.push(queue.length);
+      break;
+    case "empty":
+      result.push(queue[0] ? 0 : 1);
+      break;
+    case "front":
+      result.push(queue[0] || -1);
+      break;
+    case "back":
+      result.push(queue[queue.length - 1] || -1);
+      break;
+  }
 }
-
-console.log(answer.join('\n'));
+console.log(result.join("\n"));
