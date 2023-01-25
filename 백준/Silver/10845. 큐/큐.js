@@ -7,10 +7,10 @@ const result = [];
 const n = Number(input[0]);
 
 for (i = 1; i <= n; i++) {
-  let order = input[i].split(" ");
-  switch (order[0]) {
+  let [order, value] = input[i].split(" ");
+  switch (order) {
     case "push":
-      queue.push(order[1]);
+      queue.push(value);
       break;
     case "pop":
       result.push(queue.shift() || -1);
